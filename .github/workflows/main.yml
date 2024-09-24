@@ -1,6 +1,9 @@
 name: Generate Podcast Feeds
 on: [push]
 jobs:
+  job-name:
+    permissions:
+      contents: write
   build:
     runs-on: ubuntu-latest
     steps:
@@ -18,8 +21,8 @@ jobs:
         run: python feed.py
       - name: Push Repo
         run: |
-          git config user.name monkishtypist
-          git config user.email tcspinks@gmail.com
+          git config user.name github-actions
+          git config user.email github-action@github.com
           git add .
           git commit -m "Modified Feed"
           git push
