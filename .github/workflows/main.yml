@@ -1,9 +1,6 @@
 name: Generate Podcast Feeds
 on: [push]
 jobs:
-  job-name:
-    permissions:
-      contents: write
   build:
     runs-on: ubuntu-latest
     steps:
@@ -26,3 +23,5 @@ jobs:
           git add .
           git commit -m "Modified Feed"
           git push
+    permissions:
+      contents: write
